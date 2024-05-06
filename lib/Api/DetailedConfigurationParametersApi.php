@@ -871,6 +871,14 @@ class DetailedConfigurationParametersApi
                         $response->getStatusCode(),
                         $response->getHeaders()
                     ];
+
+                case 204:
+
+                    return [
+                        ObjectSerializer::deserialize(null, '\Irisnet\API\Client\Model\ParamSet', []),
+                        $response->getStatusCode(),
+                        $response->getHeaders()
+                    ];
             }
 
             $returnType = '\Irisnet\API\Client\Model\ParamSet';
